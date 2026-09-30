@@ -1,0 +1,233 @@
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+
+%----------------------------------------------------------------------------------------
+%   FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}     
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}           
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{5pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+% \addbibresource{citations.bib} % No publications in this CV
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[-2pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{porshort}[2]
+   {
+   \begin{tabularx}{\linewidth}{@{}l X r@{}}
+   #1 & \hfill &  #2 \\
+   \end{tabularx}
+   }
+   {
+   }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=0pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}  
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%   BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%   TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} l X r @{}}
+    % \includegraphics[height=1.0cm]{iitd_logo.png} & &
+    \begin{minipage}[t]{0.6\linewidth}
+        \Large{\textbf{Devansh Kandpal}} \\[2pt]
+        \normalsize{B.Tech in Production and Industrial Engineering} \\
+        \normalsize{Indian Institute of Technology, Delhi}
+    \end{minipage}
+    & &
+    \begin{minipage}[t]{0.3\linewidth}
+        \flushright
+        \href{https://github.com/0xDevansh}{\raisebox{-0.05\height}\faGithub\ 0xDevansh} \\
+        \href{https://linkedin.com/in/devanshkd}{\raisebox{-0.05\height}\faLinkedin\ devanshkd} \\
+        \href{mailto:devanshkandpal54@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ devanshkandpal54@gmail.com} \\
+        \href{tel:+919244352208}{\raisebox{-0.05\height}\faMobile\ +91 92443 52208}
+    \end{minipage}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+% \section{Summary}
+% B.Tech student at the Indian Institute of Technology, Delhi, specializing in Production and Industrial Engineering. Passionate about software development with hands-on experience in full-stack web development, machine learning, and developer tools. Proven ability to lead and deliver complex technical projects from conception to deployment.
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION
+%----------------------------------------------------------------------------------------
+\section{\textbf{Education}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}   
+2028 & B.Tech in Production and Industrial Engineering, \textbf{Indian Institute of Technology, Delhi} \hfill \normalsize (9.16/10.0) \\
+2024 & Class 12th (CBSE Board), \textbf{GVN The Global School, Bhopal} \hfill (97\%) \\ 
+2022 & Class 10th (CBSE Board), \textbf{Delhi Public School, Bhopal} \hfill (96\%) \\ 
+\end{tabularx}
+
+\section{\textbf{Scholastics}}
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    \item \textbf{Department Rank 4:} Based on overall CGPA (9.03) at the end of the fourth semester (Spring 2026), among \textbf{150+ students} in the Department of Mechanical Engineering, IIT Delhi. 
+\item Secured All India Rank \textbf{2896} in \textbf{JEE Advanced 2024}, among \textbf{top 1.6\%} of \textbf{180,000+} appearing in JEE-A.
+\item Placed in the top \textbf{99.81 percentile} in \textbf{JEE Main 2024}, among 1.4 million candidates who gave the exam.
+    \end{itemize}
+    \end{minipage}  
+
+%Projects
+\section{\textbf{Projects}}
+
+\begin{joblong}{Inter IIT Tech Meet 14.0 | \small \textit{Python, torch, Pathway, Finance, React}}{October -- December 2025}
+\item Worked on \textbf{InFinity}, an orchestrated multi-agent system for stock and portfolio analysis, integrating insights from technical, fundamental, news and risk agents by comparing methodologies across multiple research papers.
+\item Created Fundamental Agent to analyse public filings and statements to determine a firm's financial health. 
+\end{joblong}
+\begin{joblong}{LSTM next token prediction model | \small \textit{Python, numpy} | \small \href{https://github.com/0xDevansh/lstm}{GitHub}}{October 2025}
+\item Built a double-layer LSTM model to predict the next character given some text, similar to a language model.
+\item Experimented with tokenization and embeddings to reduce dimensionality and produce better predictions.
+\end{joblong}
+\begin{joblong}{ChatIITD, Degree Planner | \small \textit{LangChain, Qdrant, Google OR Tools}}{June 2025 -- Ongoing}
+\item Contributed to a degree planner by modelling course scheduling as a \textbf{Constraint Satisfaction Problem}. Used a \textbf{CP-SAT solver} to create course plans by enforcing DAG-based prerequisite logic and time-slot constraints.
+\item Created a retrieval-augmented generation based agentic chatbot for academics-related queries at IITD by modeling RAG retrieval as tool calls with defined scopes. Ensured optimal chunking of structured PDF files.
+\end{joblong}
+\begin{joblong}{Implementing neural networks | \small \textit{Python, numpy} | \small \href{https://github.com/0xDevansh/Devansh-Aries-Study/blob/main/projects/fashion_mnist/fmnist_final.ipynb}{GitHub}}{June 2025}
+\item Created and trained a shallow (single hidden layer) neural network for image classification on the Fashion MNIST dataset without using any machine learning library, achieving 79.5\% accuracy.
+\item Built the same network using PyTorch and achieved 87\% accuracy by tuning hyperparameters.
+\end{joblong}
+\begin{joblong}{Projects Portal | \small \textit{TypeScript, Fastify, React, Tailwind, Nginx} | \small \href{https://github.com/0xDevansh/projector}{GitHub}}{Jan 2025 -- Apr 2025}
+\item Built a portal for professors at IIT Delhi to upload research projects and invite student applications.
+\item This portal hosted 29 projects by 20 professors from 14 diverse departments. It saw 164 peak daily logins.
+\end{joblong}
+% \begin{joblong}{Affiliate Magnet | \small \textit{TypeScript, Discord.js, MongoDB, Nginx, Vue}}{Nov 2021 -- Jul 2024}
+% \item Created and maintained a verified Discord bot that replaces standard product links with affiliate ones.
+% \item Hosted on a virtual private server and maintained for over 2 years, reaching over 200 servers at its peak.
+% \end{joblong}
+% \begin{joblong}{Poll Pilot | \small \textit{Python, Tkinter, SQLite} | \small \href{https://github.com/0xDevansh/voting-ip-project}{GitHub}}{Jul -- Dec 2023}
+% \item Developed a poll conduction and management desktop application as a CBSE class 12 final project.
+% \item Implemented voting algorithms including First Past the Post, Approval Voting, Runoff and Referendum.
+% \end{joblong}
+
+% \begin{joblong}{GitHub Deploy-inator | \small \textit{Go, Webhooks} | \small \href{https://github.com/0xDevansh/github-deploy-inator}{GitHub}}{Feb 2022}
+% \item Created an alternative to Docker's watchtower for automated deployments triggered by GitHub webhooks, designed for non-containerized applications.
+% \end{joblong}
+
+
+%----------------------------------------------------------------------------------------
+%   RELEVANT COURSES
+%----------------------------------------------------------------------------------------
+\section{\textbf{Relevant Courses}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Mechanical Engineering} & \normalsize{Solid Mechanics, Kinematics and Dynamics of Machines, Thermal Science} \\
+\textbf{Computer Science} & \normalsize{Introduction to Computer Science, Data Structures and Algorithms*} \\
+\textbf{Mathematics} & \normalsize{Linear Algebra and Differential Equations, Introductory Calculus, Introduction to Statistics and Probability*}\\
+\textbf{Online Courses} & \normalsize{\href{https://certificates.cs50.io/25de5a86-ec69-470e-bc91-5073398578b1.pdf?size=a4}{CS50's Introduction to Databases with SQL}, \href{https://certificate.givemycertificate.com/c/09f4da38-e64d-45b7-98fa-69b095ce30bf}{IIT Guwahati Winter Consulting 2024}} \\
+\multicolumn{2}{@{}l}{\footnotesize \textit{*scheduled for Spring 2026 semester}}
+\end{tabularx}
+\section{\textbf{Technical Skills}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Languages \& Libraries} &  \normalsize{\textbf{Python}, pandas, numpy, scikit-learn, torch, \textbf{C++}, Arduino, \textbf{TypeScript}, \textbf{Javascript}, Puppeteer (browser automation), Node.js, NestJS, React, Vue, Tailwind, \textbf{Go}, \textbf{Rust}, \textbf{SQL}}\\
+\textbf{Tools}  &  \normalsize{Git, Linux, Nginx, Nix, Autodesk Inventor, Figma}\\  
+\end{tabularx}
+
+%Experience
+\section{\textbf{Positions of Responsibility}}
+
+\begin{porshort}{Canvas Member at \textbf{ARIES: The AI/ML Society}, IIT Delhi}{May 2025 -- Present}
+\end{porshort}
+\begin{porshort}{Technical Executive at \textbf{Business and Consulting Club}, IIT Delhi}{May 2025 -- Present}
+\end{porshort}
+% \begin{porshort}{Technical Executive at \textbf{Board of Recreational and Cultural Activities}, IIT Delhi}{May 2025 -- Present}
+% \end{porshort}
+\begin{porshort}{House Representative at \textbf{Quizzing Club}, IIT Delhi}{Apr 2025 -- Present}
+\end{porshort}
+\vfill
+% \center{\footnotesize Last updated: \today}
+\end{document}
