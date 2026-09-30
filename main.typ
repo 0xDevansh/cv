@@ -154,7 +154,7 @@
   meta: [Self Project · TypeScript, Cloudflare Workers, React],
   dates: [(Jun, 2026 -- Ongoing)],
 )
-- Built *Lapis*, a private web vault for Obsidian notes, with browser editing, wikilinks, backlinks, and SQLite FTS5 search, synced both ways by an Obsidian plugin.
+- Built *Lapis*, a private web vault for Obsidian notes, with browser editing, wikilinks and backlinks synced both ways by an Obsidian plugin.
 - Kept each vault consistent with a *Durable Object* that applies text patches and writes conflict notes, with offline replay, sealed Git history, and MCP access only for opted-in vaults.
 
 #entry(
@@ -221,5 +221,5 @@
 )
 #por(
   [Coordinator, DevClub],
-  [Contributed to Projects Portal, ChatIITD & IITD Wiki, IITD contingent member to Cognizance IIT Roorkee.],
+  [Contributed to Projects Portal, ChatIITD & IITD Wiki, contingent member to Cognizance IITR.],
 )
